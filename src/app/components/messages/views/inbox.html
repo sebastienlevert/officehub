@@ -1,0 +1,51 @@
+<article id="page-main" class="ms-Grid-col ms-u-sm12 ms-font-m">
+  <div class="top-info">
+    <div class="ms-CommandBar mail-bar"> 
+      <div class="ms-CommandBar-sideCommands"> 
+        <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly" ng-click="vm.reload()">
+          <div class="ms-CommandBarItem-linkWrapper">
+            <div class="ms-CommandBarItem-link">
+              <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--reload"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ms-CommandBar-mainArea">
+        <div class="ms-CommandBarItem" ng-click="vm.goToNewEmail()">
+          <div class="ms-CommandBarItem-linkWrapper">
+            <div class="ms-CommandBarItem-link">
+              <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--circlePlus"></span>
+              <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">New</span>
+            </div>
+          </div>
+        </div>
+        <!-- Overflow Command -->
+        <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
+          <div class="ms-CommandBarItem-linkWrapper">
+            <div class="ms-CommandBarItem-link">
+              <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis"></span>
+              <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular"></span>
+              <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+            </div>
+          </div>
+          <ul class="ms-CommandBar-overflowMenu ms-ContextualMenu"></ul>
+        </div>
+        <!-- End Overflow Command -->
+      </div>
+    </div>
+    <p class="ms-font-xxl page-title">Messages</p>
+  </div>
+  <ul class="ms-List mail-list" infinite-scroll="vm.getNextMessages()">
+    <div class="ms-ListItem is-selectable mail-item" ng-class="{true: '', false: 'is-unread'}[message.IsRead]" data-ng-repeat="message in vm.Messages">
+      <span class="ms-ListItem-primaryText" ng-click="vm.goToMessage(message)">{{ message.Sender.EmailAddress.Name }}</span>
+      <span class="ms-ListItem-secondaryText" ng-click="vm.goToMessage(message)">{{ message.Subject }}</span>
+      <span class="ms-ListItem-tertiaryText">{{ message.BodyPreview }}</span>
+      <span class="ms-ListItem-metaText">{{ message.ReceivedDateTime | amCalendar }}</span>
+      <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+      <div class="ms-ListItem-actions">
+        <div class="ms-ListItem-action" ng-click="vm.deleteMessage(message)"><i class="ms-Icon ms-Icon--trash"></i></div>
+        <div class="ms-ListItem-action" ng-click="vm.toggleReadStatus($index)"><i class="ms-Icon ms-Icon--mailUnread"></i></div>
+      </div>
+    </div>
+  </ul>
+</article>

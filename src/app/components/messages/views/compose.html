@@ -1,0 +1,50 @@
+<article id="page-main" class="ms-Grid-col ms-u-sm12 ms-font-m">
+  <div class="ms-CommandBar mail-bar"> 
+    <div class="ms-CommandBar-sideCommands"> 
+      <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly" ng-click="vm.cancel()">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ms-CommandBar-mainArea">
+      <div class="ms-CommandBarItem" ng-click="vm.sendMessage()">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--mailSend"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Send</span>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- Overflow Command -->
+      <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular"></span>
+            <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+          </div>
+        </div>
+        <ul class="ms-CommandBar-overflowMenu ms-ContextualMenu"></ul>
+      </div>
+      <!-- End Overflow Command -->
+    </div>
+  </div>
+  <p class="ms-font-xxl page-title">{{ vm.Subject }}</p>
+  <div class="ms-TextField ms-TextField--underlined">
+    <label class="ms-Label">To:</label>
+    <input class="ms-TextField-field" ng-model="vm.ToAddresses"/>
+  </div>
+  <div class="ms-TextField ms-TextField--underlined">
+    <label class="ms-Label">Cc:</label>
+    <input class="ms-TextField-field" ng-model="vm.CcAddresses"/>
+  </div>
+  <div class="ms-TextField ms-TextField--underlined">
+    <label class="ms-Label">Subject:</label>
+    <input class="ms-TextField-field" ng-model="vm.Subject"/>
+  </div>
+  <div ng-wig="vm.Body"></div>
+</article>

@@ -1,0 +1,49 @@
+<article id="page-main" class="ms-Grid-col ms-u-sm12 ms-font-m">
+  <div class="ms-CommandBar mail-bar"> 
+    <div class="ms-CommandBar-sideCommands"> 
+      <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly" ng-click="vm.goToMessages()">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ms-CommandBar-mainArea">
+      <div class="ms-CommandBarItem" ng-click="vm.goToReply()">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--reply"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Reply</span>
+          </div>
+        </div>
+      </div>
+      <div class="ms-CommandBarItem" ng-click="vm.deleteMessage()">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--trash"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Delete</span>
+          </div>
+        </div>
+      </div>
+      <!-- Overflow Command -->
+      <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <div class="ms-CommandBarItem-link">
+            <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular"></span>
+            <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+          </div>
+        </div>
+        <ul class="ms-CommandBar-overflowMenu ms-ContextualMenu"></ul>
+      </div>
+      <!-- End Overflow Command -->
+    </div>
+  </div>
+  <p class="ms-font-xxl page-title">{{ vm.Message.Subject }}</p>
+  <p ng-cloak>
+    From: <span class="ms-fontWeight-semibold">{{ vm.Message.Sender.EmailAddress.Name }} ({{ vm.Message.Sender.EmailAddress.Address }})</span>
+  </p>
+  <div data-ng-bind-html="vm.Message.Body.Content">
+  </div>
+</article>

@@ -1,0 +1,197 @@
+@import '_reset';
+@import '_colors';
+
+.ms-Grid {
+  padding: 0 0px;
+  height:100vh;
+}
+
+.ms-Grid-row {
+    margin: 0px 0px;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+/* >>>>> MAIN PAGE ELEMENTS <<<<< */
+#page-header {
+  background-color: $ms-themePrimary;
+  color: $ms-white;
+  padding-top: 15px; 
+  padding-bottom: 15px; 
+  text-align: center;
+  width: 100%;
+}
+
+#page-navigation {
+  position:fixed;
+  top:0px;
+  z-index:2000;
+}
+
+.mail-bar {
+  margin-top:60px;
+}
+
+#page-main {
+  text-align: left;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom:120px;
+}
+
+.page-title {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+#page-footer {
+  background-color: $ms-themeDark;
+  margin-top: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  position:fixed;
+  bottom:0px;
+  
+}
+
+.mail-list {
+  overflow-y:scroll; 
+  height:auto;
+}
+
+.mail-item {
+  position:relative;
+}
+
+.header-element-base {
+  display: inline-block;
+}
+
+#brand-logo{
+  @extend .header-element-base;
+}
+
+#brand-name {
+  @extend .header-element-base;
+  margin-left: 15px;
+}
+
+#site-tagline {
+  @extend .header-element-base;
+  margin-left: 75px;
+  width: 360px;
+  text-align: left;
+}
+
+/* global navigation */
+nav {
+  margin: 0;
+  background: $ms-themeDark;
+  text-align:right;
+}
+
+#global-nav {
+  list-style: none;
+  li {
+    display: inline-block;
+
+    a:hover {
+      background: $ms-themeDarker;
+    }
+  }
+  a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: $ms-white;
+  }
+  li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+/* local navigation */
+#local-nav {
+  margin: 15px 50px 0px 0px;
+  text-align: right;
+  ul {
+    list-style: none;
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 0.5em;
+    }
+  }
+  li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+/* table utils */
+.align-middle {
+  vertical-align: middle;
+}
+.no-wrap-cell {
+  white-space: nowrap;
+}
+
+/* icon page tweaks */
+.icon-list ul li {
+  float: left;
+  font-size: 11px;
+  color: black;
+  width: 15%;
+  text-align: center;
+  height: 100px;
+  padding: 10px;
+  overflow: hidden;
+
+  .ms-Icon {
+    font-size: 35px;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+/* animation page tweaks */
+.animation-container {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+.animation-content {
+  height: 100%;
+  border: 1px solid gray;
+  padding: 10px;
+}
+.animation-panel-in {
+  position: absolute;
+  top: 0px;
+  width: 60px;
+  height: 100%;
+  opacity: 0;
+}
+.animation-panel-out {
+  position: absolute;
+  top: 0px;
+  width: 60px;
+  height: 100%;
+  opacity: 1;
+}
+
+.ms-Persona {
+  padding-top: 5px;
+}
+
+.ms-Persona-details {
+  font-family: 'Segoe UI Semilight WestEuropean','Segoe UI Semilight','Segoe WP Semilight','Segoe UI','Segoe WP',Tahoma,Arial,sans-serif;
+}

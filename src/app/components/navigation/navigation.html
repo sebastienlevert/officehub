@@ -1,0 +1,25 @@
+<div id="page-navigation" class="ms-NavBar" ng-controller="AdalController as adal">
+  <ul class="ms-NavBar-items">
+    <li class="ms-NavBar-item"><a class="ms-NavBar-link" ui-sref="root.home">Home</a></li>
+    <li class="ms-NavBar-item"><a class="ms-NavBar-link" ui-sref="root.messages">Messages</a></li>
+    <li class="ms-NavBar-item ms-NavBar-item--right" ng-if="!userInfo.isAuthenticated">
+      <a class="ms-NavBar-link" ng-click="adal.login()">Login</a>
+    </li>
+    <li class="ms-NavBar-item ms-NavBar-item--right" ng-if="userInfo.isAuthenticated">
+      <a class="ms-NavBar-link" ng-click="adal.logout()">Logout</a>
+    </li>
+    <li class="ms-NavBar-item is-disabled ms-NavBar-item--right" ng-if="userInfo.isAuthenticated">
+      <div class="ms-Persona ms-Persona--xs">
+        <div class="ms-Persona-imageArea">
+          <div class="ms-Persona-imageCircle">
+            <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+            <img class="ms-Persona-image" ng-src="{{ adal.userPhoto }}">
+          </div>
+        </div>
+        <div class="ms-Persona-details">
+          <a class="ms-NavBar-link">{{ userInfo.profile.name }}</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
