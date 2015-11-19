@@ -87,7 +87,7 @@
             //----------------------------------------------------------------------
             vm.Message = message;
             
-            if (!vm.Message.IsRead) {
+            if (!vm.Message.isRead) {
               //----------------------------------------------------------------------
               // If the email is not read, flag it as read
               //----------------------------------------------------------------------
@@ -106,9 +106,9 @@
             //----------------------------------------------------------------------
             // Assign the view data to the reply received (title with RE:, etc.)
             //----------------------------------------------------------------------
-            vm.ToAddresses = vm.Message.Sender.EmailAddress.Address;
-            vm.Subject = data.Subject;
-            vm.Body = "<br /><br />" + data.Body.Content;
+            vm.ToAddresses = vm.Message.sender.emailAddress.address;
+            vm.Subject = data.subject;
+            vm.Body = "<br /><br />" + data.body.content;
           }, function () {
             //----------------------------------------------------------------------
             // If an error occured, do nothing

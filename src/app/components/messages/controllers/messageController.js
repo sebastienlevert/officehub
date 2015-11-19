@@ -29,7 +29,7 @@
             //----------------------------------------------------------------------
             vm.Message = message;
             
-            if (!vm.Message.IsRead) {
+            if (!vm.Message.isRead) {
               //----------------------------------------------------------------------
               // If the email is not read, flag it as read
               //----------------------------------------------------------------------
@@ -80,7 +80,7 @@
         };
         
         vm.goToReply = function() {
-          $state.go('root.messageReply', { id: vm.Message.Id })
+          $state.go('root.messageReply', { id: vm.Message.id })
         }
         
         vm.goToMessages = function() {

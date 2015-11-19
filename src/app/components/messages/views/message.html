@@ -40,10 +40,10 @@
       <!-- End Overflow Command -->
     </div>
   </div>
-  <p class="ms-font-xxl page-title">{{ vm.Message.Subject }}</p>
+  <p class="ms-font-xxl page-title">{{ vm.Message.subject }}</p>
   <p ng-cloak>
-    From: <span class="ms-fontWeight-semibold">{{ vm.Message.Sender.EmailAddress.Name }} ({{ vm.Message.Sender.EmailAddress.Address }})</span>
+    From: <span class="ms-fontWeight-semibold">{{ vm.Message.sender.emailAddress.name }} ({{ vm.Message.sender.emailAddress.address }})</span>
   </p>
-  <div data-ng-bind-html="vm.Message.Body.Content">
+  <div data-ng-bind-html="vm.Message.body.content">
   </div>
 </article>

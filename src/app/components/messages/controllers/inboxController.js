@@ -68,40 +68,17 @@
           // Sets the IsRead status
           //----------------------------------------------------------------------
           var data = {
-            IsRead: !vm.Messages[index].IsRead
+            IsRead: !vm.Messages[index].isRead
           };
 
           //----------------------------------------------------------------------
           // Update the message to be considered read
           //----------------------------------------------------------------------
-          MessagesService.updateMessage(vm.Messages[index].Id, data).then(function (message) {
+          MessagesService.updateMessage(vm.Messages[index].id, data).then(function (message) {
             //----------------------------------------------------------------------
             // Update the view message
             //----------------------------------------------------------------------
-            vm.Messages[index].IsRead = message.IsRead;             
-          }, function () {
-            //----------------------------------------------------------------------
-            // If an error occured, do nothing
-            //----------------------------------------------------------------------
-          });
-        };
-        
-        vm.toggleFlag = function (index) {
-          //----------------------------------------------------------------------
-          // Sets the IsRead status
-          //----------------------------------------------------------------------
-          var data = {
-            IsFlagged: !vm.Messages[index].IsRead
-          };
-
-          //----------------------------------------------------------------------
-          // Update the message to be considered read
-          //----------------------------------------------------------------------
-          MessagesService.updateMessage(vm.Messages[index].Id, data).then(function (message) {
-            //----------------------------------------------------------------------
-            // Update the view message
-            //----------------------------------------------------------------------
-            vm.Messages[index].IsRead = message.IsRead;             
+            vm.Messages[index].isRead = message.isRead;             
           }, function () {
             //----------------------------------------------------------------------
             // If an error occured, do nothing
@@ -118,7 +95,7 @@
         }
         
         vm.goToMessage = function(message) {
-          $state.go("root.message", { id: message.Id });
+          $state.go("root.message", { id: message.id });
         }
         
         vm.goToNewEmail = function() {
@@ -129,7 +106,7 @@
           //----------------------------------------------------------------------
           // Deletes a message
           //----------------------------------------------------------------------
-          MessagesService.deleteMessage(message.Id).then(function () {
+          MessagesService.deleteMessage(message.id).then(function () {
             //----------------------------------------------------------------------
             // Deleting the local version of the message
             //----------------------------------------------------------------------

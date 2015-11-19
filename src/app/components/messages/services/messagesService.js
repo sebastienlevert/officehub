@@ -20,7 +20,7 @@
             //----------------------------------------------------------------------
         // Build the REST Endpoint URL
         //----------------------------------------------------------------------
-        var uri = "https://graph.microsoft.com/beta/me/MailFolders/Inbox/messages?&top=" + pageSize;
+        var uri = "https://graph.microsoft.com/v1.0/me/MailFolders/Inbox/messages?&top=" + pageSize;
 
         //----------------------------------------------------------------------
         // Builds the query to skip the elements of the past page
@@ -60,7 +60,7 @@
         //----------------------------------------------------------------------
         // Build the REST Endpoint URL
         //----------------------------------------------------------------------
-        var uri = "https://graph.microsoft.com/beta/me/messages/" + messageId;
+        var uri = "https://graph.microsoft.com/v1.0/me/messages/" + messageId;
 
         //----------------------------------------------------------------------
         // Executes the query on Office 365
@@ -92,7 +92,7 @@
         //----------------------------------------------------------------------
         // Build the REST Endpoint URL
         //----------------------------------------------------------------------
-        var uri = "https://graph.microsoft.com/beta/me/messages/" + messageId;
+        var uri = "https://graph.microsoft.com/v1.0/me/messages/" + messageId;
 
         //----------------------------------------------------------------------
         // Executes the query on Office 365
@@ -124,7 +124,7 @@
         //----------------------------------------------------------------------
         // Build the REST Endpoint URL
         //----------------------------------------------------------------------
-        var uri = "https://graph.microsoft.com/beta/me/messages/" + messageId;
+        var uri = "https://graph.microsoft.com/v1.0/me/messages/" + messageId;
 
         //----------------------------------------------------------------------
         // Executes the query on Office 365
@@ -156,7 +156,7 @@
       //----------------------------------------------------------------------
       // Build the REST Endpoint URL
       //----------------------------------------------------------------------
-      var uri = "https://graph.microsoft.com/beta/me/sendmail";
+      var uri = "https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail";
 
       //----------------------------------------------------------------------
       // Builds the necessary data object to send to the send an email
@@ -214,7 +214,7 @@
       //----------------------------------------------------------------------
       // Build the REST Endpoint URL
       //----------------------------------------------------------------------
-      var uri = "https://graph.microsoft.com/beta/me/messages/" + messageId + "/CreateReply";
+      var uri = "https://graph.microsoft.com/v1.0/me/messages/" + messageId + "/CreateReply";
 
       //----------------------------------------------------------------------
       // Executes the query on Office 365

@@ -36,11 +36,11 @@
     <p class="ms-font-xxl page-title">Messages</p>
   </div>
   <ul class="ms-List mail-list" infinite-scroll="vm.getNextMessages()">
-    <div class="ms-ListItem is-selectable mail-item" ng-class="{true: '', false: 'is-unread'}[message.IsRead]" data-ng-repeat="message in vm.Messages">
-      <span class="ms-ListItem-primaryText" ng-click="vm.goToMessage(message)">{{ message.Sender.EmailAddress.Name }}</span>
-      <span class="ms-ListItem-secondaryText" ng-click="vm.goToMessage(message)">{{ message.Subject }}</span>
-      <span class="ms-ListItem-tertiaryText">{{ message.BodyPreview }}</span>
-      <span class="ms-ListItem-metaText">{{ message.ReceivedDateTime | amCalendar }}</span>
+    <div class="ms-ListItem is-selectable mail-item" ng-class="{true: '', false: 'is-unread'}[message.isRead]" data-ng-repeat="message in vm.Messages">
+      <span class="ms-ListItem-primaryText" ng-click="vm.goToMessage(message)">{{ message.sender.emailAddress.name }}</span>
+      <span class="ms-ListItem-secondaryText" ng-click="vm.goToMessage(message)">{{ message.subject }}</span>
+      <span class="ms-ListItem-tertiaryText">{{ message.bodyPreview }}</span>
+      <span class="ms-ListItem-metaText">{{ message.receivedDateTime | amCalendar }}</span>
       <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
       <div class="ms-ListItem-actions">
         <div class="ms-ListItem-action" ng-click="vm.deleteMessage(message)"><i class="ms-Icon ms-Icon--trash"></i></div>
