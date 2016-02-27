@@ -22,6 +22,9 @@
           },
           'navigation': {
             templateUrl: 'app/components/navigation/navigation.html'
+          },          
+          'suitebar': {
+            templateUrl: 'app/components/suitebar/suitebar.html'
           }
         }
       })
@@ -72,6 +75,16 @@
           'container@': {
             templateUrl: 'app/components/messages/views/compose.html',
             controller: "ReplyController",
+            controllerAs: "vm"
+          }
+        },
+        requireADLogin: true
+      }).state('root.videos', {
+        url: '/videos',
+        views: {
+          'container@': {
+            templateUrl: 'app/components/videos/views/videos.html',
+            controller: "VideosController",
             controllerAs: "vm"
           }
         },

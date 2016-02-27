@@ -21,22 +21,27 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="ms-Grid">
+    <!-- Suite Bar -->
+    <div ui-view name="suitebar"></div>
+      
+    <div class="ms-Grid">      
       <!-- Top Navigation -->
       <div ui-view name="navigation"></div>
       
       <!-- Header -->
-      <div ui-view name="header"></div>
-      
-      <div class="ms-Grid-row">        
-        <!-- Page Body -->
-        <div ui-view name="container"></div>
-        
-        <!-- Footer -->
-        <div ui-view name="footer"></div>
-      </div>
-      
+      <div ui-view name="header"></div>      
     </div>
+    
+    <div class="VideoPortal" style="padding-top:90px;">
+        <div class="VideoPortal-content">     
+            <!-- Page Body -->
+            <div ui-view name="container"></div>
+        </div>
+    </div>
+      
+    
+    
+    
 
     <!-- jQuery library -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

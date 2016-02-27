@@ -3,7 +3,7 @@
 
 .ms-Grid {
   padding: 0 0px;
-  height:100vh;
+  /*height:55px;*/
 }
 
 .ms-Grid-row {
@@ -30,19 +30,19 @@
 
 #page-navigation {
   position:fixed;
-  top:0px;
+  top:50px;
   z-index:2000;
 }
 
 .mail-bar {
-  margin-top:60px;
+  margin-top:25px;
 }
 
 #page-main {
   text-align: left;
   padding-right: 25px;
   padding-left: 25px;
-  padding-bottom:120px;
+  padding-bottom:25px;
 }
 
 .page-title {
