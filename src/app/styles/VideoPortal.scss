@@ -152,6 +152,9 @@ a:active {
 .SpotLight-videoLength {
   color: #ffffff;
   display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 @media (min-width: 640px) {
   .SpotLightList {

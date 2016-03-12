@@ -26,6 +26,11 @@
         // Boolean value representing if there is a next page
         //----------------------------------------------------------------------
         vm.HasNextPage = true;
+        
+        //----------------------------------------------------------------------
+        // Boolean value representing if the spinner is visible
+        //----------------------------------------------------------------------
+        vm.IsLoading = true;
         //#endregion
 
         //#region Public Methods        
@@ -57,6 +62,11 @@
               // Re-allows process of new messages
               //----------------------------------------------------------------------
               busy = false;
+              
+              //----------------------------------------------------------------------
+              // Re-allows process of new messages
+              //----------------------------------------------------------------------
+              vm.IsLoading = false;
             }, function () {
               console.log("An error occured");
             });

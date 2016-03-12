@@ -1,7 +1,9 @@
 {
   "name": "OfficeHub",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "ng-office-ui-fabric": "^0.5.0"
+  },
   "scripts": {
     "test": "gulp test"
   },

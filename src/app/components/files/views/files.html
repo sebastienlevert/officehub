@@ -1,0 +1,23 @@
+<article id="page-main" class="ms-Grid-col ms-u-sm12 ms-font-m">
+  <div class="top-info">
+    <p class="ms-font-xxl page-title">Files</p>    
+  </div>
+  <uif-table>
+    <uif-table-row>
+      <uif-table-header ng-style="{ 'width' : '30px' }"></uif-table-header>
+      <uif-table-header>File name</uif-table-header>
+      <uif-table-header>Modified</uif-table-header>
+      <uif-table-header>Modified By</uif-table-header>
+      <uif-table-header>Size</uif-table-header>
+    </uif-table-row>
+    <uif-spinner uif-size="large" ng-show="vm.IsLoading"></uif-spinner>
+    <uif-table-row ng-repeat="file in vm.Files">
+      <uif-table-cell ng-if="file.folder"><a ui-sref="root.files.folder( { id: file.id })"><uif-icon uif-type="folder" /></a></uif-table-cell>
+      <uif-table-cell ng-if="file.file"><a ng-href="{{ file.webPlayerUrl }}"><uif-icon uif-type="fileDocument" /></a></uif-table-cell>
+      <uif-table-cell>{{ file.name }}</uif-table-cell>
+      <uif-table-cell>{{ file.lastModifiedDateTime | amCalendar }}</uif-table-cell>
+      <uif-table-cell>{{ file.lastModifiedBy.user.displayName }}</uif-table-cell>
+      <uif-table-cell>{{ file.kilobyteSize }}</uif-table-cell>
+    </uif-table-row>
+  </uif-table>
+</article>

@@ -6,8 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {   
-    //$locationProvider.html5Mode(true);
+  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {  
      
     $stateProvider
       .state('root', {
@@ -26,7 +25,8 @@
           'suitebar': {
             templateUrl: 'app/components/suitebar/suitebar.html'
           }
-        }
+        },
+        requireADLogin: true
       })
       .state('root.home', {
         url: '/',
@@ -34,7 +34,8 @@
            'container@': { 
             templateUrl: 'app/components/home/home.html'
           }
-        }
+        },
+        requireADLogin: true
       })
       .state('root.messages', {
         url: '/messages',
@@ -85,6 +86,26 @@
           'container@': {
             templateUrl: 'app/components/videos/views/videos.html',
             controller: "VideosController",
+            controllerAs: "vm"
+          }
+        },
+        requireADLogin: true
+      }).state('root.files', {
+        url: '/files',
+        views: {
+          'container@': {
+            templateUrl: 'app/components/files/views/files.html',
+            controller: "FilesController",
+            controllerAs: "vm"
+          }
+        },
+        requireADLogin: true
+      }).state('root.files.folder', {
+        url: '/:id',
+        views: {
+          'container@': {
+            templateUrl: 'app/components/files/views/files.html',
+            controller: "FilesController",
             controllerAs: "vm"
           }
         },

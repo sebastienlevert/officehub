@@ -12,15 +12,14 @@
     // ADAL configuration
     //----------------------------------------------------------------------
     adalAuthenticationServiceProvider.init({
-      //tenant: 'a204560f-5ffc-4cf5-a723-22981d99c4f9',
-      //clientId: '6bfd5aea-41ff-448a-96d3-6398844d8e75',
-      //clientId: '8678d1cb-82dc-4520-a750-71d1e4f38f57',
-      //tenant: '87ee87de-2492-4b10-a955-a746ddc30e99',
-      //clientId: '1bf8257c-d542-4aad-9d1b-a010c7c5a5d1',
-      clientId: '269716d2-3a91-4d9c-a737-869040658f63',      
-      postLogoutRedirectUri: 'http://localhost:3000',
+      //clientId: 'bccb07af-5dd0-4874-9415-5b15d0315b2c',
+      //clientId: '87f42411-0852-4f1d-aae3-025597124332',
+      clientId: 'daeccfdf-b5ab-4e02-8510-e33db9fbeb2a',
+      tenant: 'slevert365.onmicrosoft.com',
+      postLogoutRedirectUri: 'https://localhost:8443',
       endpoints: {
-          'https://sebastienlevert.sharepoint.com/portals/hub/_api': 'https://sebastienlevert.sharepoint.com'
+          'https://graph.microsoft.com': 'https://graph.microsoft.com',
+          'https://slevert365.sharepoint.com': 'https://slevert365.sharepoint.com'
       }
     }, $httpProvider);
             
